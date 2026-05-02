@@ -1,0 +1,108 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  STUDENT
+  ADMIN
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  REFUNDED
+  FAILED
+}
+
+model User {
+  id        String     @id @default(uuid())
+  name      String
+  email     String     @unique
+  password  String
+  country   String?
+  timezone  String?
+  role      Role       @default(STUDENT)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  bookings  Booking[]
+  progress  Progress[]
+  reviews   Review[]
+}
+
+model Booking {
+  id            String        @id @default(uuid())
+  studentId     String
+  date          DateTime
+  duration      Int           // duration in minutes
+  subject       String
+  status        BookingStatus @default(PENDING)
+  paymentStatus PaymentStatus @default(PENDING)
+  meetLink      String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  student       User          @relation(fields: [studentId], references: [id])
+  payments      Payment[]
+}
+
+model Payment {
+  id          String   @id @default(uuid())
+  bookingId   String
+  amount      Float
+  currency    String
+  method      String
+  gatewayId   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  booking     Booking  @relation(fields: [bookingId], references: [id])
+}
+
+model Availability {
+  id          String   @id @default(uuid())
+  dayOfWeek   Int      // 0 for Sunday, 1 for Monday, etc.
+  startTime   String   // e.g., "10:00"
+  endTime     String   // e.g., "11:00"
+  isBlocked   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Progress {
+  id          String    @id @default(uuid())
+  studentId   String
+  subject     String
+  lesson      String
+  notes       String?
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  student     User      @relation(fields: [studentId], references: [id])
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  studentId String
+  rating    Int      // 1 to 5
+  comment   String?
+  country   String?
+  approved  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  student   User     @relation(fields: [studentId], references: [id])
+}

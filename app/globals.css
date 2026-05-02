@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #FDFBF7;
+  --color-foreground: #1B4332;
+
+  --color-emerald-50: #effaf4;
+  --color-emerald-100: #d8f3e2;
+  --color-emerald-200: #b5e8cb;
+  --color-emerald-300: #85d5ab;
+  --color-emerald-400: #55bc8b;
+  --color-emerald-500: #349f6f;
+  --color-emerald-600: #257e56;
+  --color-emerald-700: #1f6446;
+  --color-emerald-800: #1b5039;
+  --color-emerald-900: #1B4332;
+  --color-emerald-950: #0f261d;
+
+  --color-gold-50: #fbf8eb;
+  --color-gold-100: #f5eccd;
+  --color-gold-200: #eedb9e;
+  --color-gold-300: #e5c468;
+  --color-gold-400: #D4AF37;
+  --color-gold-500: #c29828;
+  --color-gold-600: #a5781f;
+  --color-gold-700: #83591a;
+  --color-gold-800: #6e481b;
+  --color-gold-900: #5d3d1a;
+  --color-gold-950: #36210d;
+
+  --color-cream-50: #FDFBF7;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-amiri: var(--font-amiri), serif;
+  --font-hind: var(--font-hind), sans-serif;
+}
+
+:root {
+  --background: #FDFBF7;
+  --foreground: #1B4332;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Optional dark mode, currently falling back to light for now since 'cream' is requested, but dark mode can be customized */
+    --background: #0f261d;
+    --foreground: #FDFBF7;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
+}
+
+input,
+select,
+textarea {
+  color: #1B4332 !important;
+  background-color: #FFFFFF !important;
+  caret-color: #1B4332 !important;
+}
+
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+  color: #9CA3AF !important;
+  opacity: 1 !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  color: #1B4332 !important;
+  background-color: #FFFFFF !important;
+  outline: 2px solid #1B4332 !important;
+}
+
+option {
+  color: #1B4332 !important;
+  background-color: #FFFFFF !important;
+}
