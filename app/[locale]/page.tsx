@@ -65,21 +65,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 t('name')
               )}
             </h1>
-
+            
             <p className="text-xl text-[#1B4332] max-w-2xl mx-auto md:mx-0">
               {t('subtitle')}
             </p>
-
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
-              <Link
-                href="/free-trial"
+              <Link 
+                href="/free-trial" 
                 className="bg-gold-500 hover:bg-gold-600 text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg shadow-gold-500/20 flex items-center justify-center gap-2"
               >
                 <Calendar className="w-5 h-5" />
                 {t('bookTrial')}
               </Link>
-              <Link
-                href="#schedule"
+              <Link 
+                href="#schedule" 
                 className="bg-white text-emerald-900 hover:bg-emerald-50 border border-emerald-900/20 px-8 py-4 rounded-full font-medium transition-all flex items-center justify-center gap-2"
               >
                 <Clock className="w-5 h-5" />
@@ -87,16 +87,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </Link>
             </div>
           </div>
-
+          
           <div className="flex-1 w-full max-w-lg relative">
             {/* Image Placeholder */}
             <div className="aspect-square rounded-3xl bg-emerald-100 border-8 border-white shadow-2xl relative overflow-hidden">
-              {/* Just a symbolic icon or placeholder until a real photo is uploaded */}
-              <div className="absolute inset-0 flex items-center justify-center text-emerald-200">
-                <BookOpen className="w-48 h-48 opacity-20" />
-              </div>
+               {/* Just a symbolic icon or placeholder until a real photo is uploaded */}
+               <div className="absolute inset-0 flex items-center justify-center text-emerald-200">
+                 <BookOpen className="w-48 h-48 opacity-20" />
+               </div>
             </div>
-
+            
             {/* Floating Stats */}
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4">
               <div className="w-12 h-12 bg-gold-100 text-gold-600 rounded-full flex items-center justify-center">
@@ -149,8 +149,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               <div className="aspect-[4/5] rounded-3xl bg-emerald-900/5 border border-emerald-900/10 overflow-hidden relative">
                 {/* Photo Placeholder */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-emerald-900/40">
-                  <BookOpen className="w-24 h-24 mb-4 opacity-50" />
-                  <p className="font-medium">{tLanding('teacherPortrait')}</p>
+                   <BookOpen className="w-24 h-24 mb-4 opacity-50" />
+                   <p className="font-medium">{tLanding('teacherPortrait')}</p>
                 </div>
               </div>
               <div className="absolute -bottom-6 -right-6 bg-gold-400 p-8 rounded-3xl shadow-xl max-w-xs text-white">
@@ -174,66 +174,66 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Course 1 */}
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-emerald-200 relative overflow-hidden group hover:shadow-md transition-all">
-              <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mb-6">
-                <BookOpen className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-emerald-950 mb-2">{tLanding('course1Title')}</h3>
-              <p className="text-sm text-emerald-900/70 mb-6">{tLanding('course1Desc')}</p>
-              <div className="space-y-2 mb-8">
-                <p className="text-xs font-semibold text-emerald-900 uppercase tracking-wider">{tLanding('course1Level')}</p>
-                <p className="text-lg font-bold text-emerald-700">{tLanding('pricePerHour')}</p>
-              </div>
-              <Link href="/free-trial" className="block w-full py-2.5 px-4 bg-emerald-50 text-emerald-900 text-center font-medium rounded-xl group-hover:bg-emerald-900 group-hover:text-white transition-colors">
-                {tLanding('bookNow')}
-              </Link>
+               <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mb-6">
+                 <BookOpen className="w-6 h-6" />
+               </div>
+               <h3 className="text-xl font-bold text-emerald-950 mb-2">{tLanding('course1Title')}</h3>
+               <p className="text-sm text-emerald-900/70 mb-6">{tLanding('course1Desc')}</p>
+               <div className="space-y-2 mb-8">
+                 <p className="text-xs font-semibold text-emerald-900 uppercase tracking-wider">{tLanding('course1Level')}</p>
+                 <p className="text-lg font-bold text-emerald-700">{tLanding('pricePerHour')}</p>
+               </div>
+               <Link href="/free-trial" className="block w-full py-2.5 px-4 bg-emerald-50 text-emerald-900 text-center font-medium rounded-xl group-hover:bg-emerald-900 group-hover:text-white transition-colors">
+                 {tLanding('bookNow')}
+               </Link>
             </div>
 
             {/* Course 2 */}
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-emerald-200 relative overflow-hidden group hover:shadow-md transition-all">
-              <div className="w-12 h-12 bg-gold-100 text-gold-700 rounded-2xl flex items-center justify-center mb-6">
-                <Star className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-emerald-950 mb-2">{tLanding('course2Title')}</h3>
-              <p className="text-sm text-emerald-900/70 mb-6">{tLanding('course2Desc')}</p>
-              <div className="space-y-2 mb-8">
-                <p className="text-xs font-semibold text-emerald-900 uppercase tracking-wider">{tLanding('course2Level')}</p>
-                <p className="text-lg font-bold text-emerald-700">{tLanding('pricePerHour')}</p>
-              </div>
-              <Link href="/free-trial" className="block w-full py-2.5 px-4 bg-emerald-50 text-emerald-900 text-center font-medium rounded-xl group-hover:bg-emerald-900 group-hover:text-white transition-colors">
-                {tLanding('bookNow')}
-              </Link>
+               <div className="w-12 h-12 bg-gold-100 text-gold-700 rounded-2xl flex items-center justify-center mb-6">
+                 <Star className="w-6 h-6" />
+               </div>
+               <h3 className="text-xl font-bold text-emerald-950 mb-2">{tLanding('course2Title')}</h3>
+               <p className="text-sm text-emerald-900/70 mb-6">{tLanding('course2Desc')}</p>
+               <div className="space-y-2 mb-8">
+                 <p className="text-xs font-semibold text-emerald-900 uppercase tracking-wider">{tLanding('course2Level')}</p>
+                 <p className="text-lg font-bold text-emerald-700">{tLanding('pricePerHour')}</p>
+               </div>
+               <Link href="/free-trial" className="block w-full py-2.5 px-4 bg-emerald-50 text-emerald-900 text-center font-medium rounded-xl group-hover:bg-emerald-900 group-hover:text-white transition-colors">
+                 {tLanding('bookNow')}
+               </Link>
             </div>
 
             {/* Course 3 */}
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-emerald-200 relative overflow-hidden group hover:shadow-md transition-all">
-              <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mb-6">
-                <BookOpen className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-emerald-950 mb-2">{tLanding('course3Title')}</h3>
-              <p className="text-sm text-emerald-900/70 mb-6">{tLanding('course3Desc')}</p>
-              <div className="space-y-2 mb-8">
-                <p className="text-xs font-semibold text-emerald-900 uppercase tracking-wider">{tLanding('course3Level')}</p>
-                <p className="text-lg font-bold text-emerald-700">{tLanding('pricePerHour')}</p>
-              </div>
-              <Link href="/free-trial" className="block w-full py-2.5 px-4 bg-emerald-50 text-emerald-900 text-center font-medium rounded-xl group-hover:bg-emerald-900 group-hover:text-white transition-colors">
-                {tLanding('bookNow')}
-              </Link>
+               <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mb-6">
+                 <BookOpen className="w-6 h-6" />
+               </div>
+               <h3 className="text-xl font-bold text-emerald-950 mb-2">{tLanding('course3Title')}</h3>
+               <p className="text-sm text-emerald-900/70 mb-6">{tLanding('course3Desc')}</p>
+               <div className="space-y-2 mb-8">
+                 <p className="text-xs font-semibold text-emerald-900 uppercase tracking-wider">{tLanding('course3Level')}</p>
+                 <p className="text-lg font-bold text-emerald-700">{tLanding('pricePerHour')}</p>
+               </div>
+               <Link href="/free-trial" className="block w-full py-2.5 px-4 bg-emerald-50 text-emerald-900 text-center font-medium rounded-xl group-hover:bg-emerald-900 group-hover:text-white transition-colors">
+                 {tLanding('bookNow')}
+               </Link>
             </div>
 
             {/* Course 4 */}
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-emerald-200 relative overflow-hidden group hover:shadow-md transition-all">
-              <div className="w-12 h-12 bg-gold-100 text-gold-700 rounded-2xl flex items-center justify-center mb-6">
-                <Star className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-emerald-950 mb-2">{tLanding('course4Title')}</h3>
-              <p className="text-sm text-emerald-900/70 mb-6">{tLanding('course4Desc')}</p>
-              <div className="space-y-2 mb-8">
-                <p className="text-xs font-semibold text-emerald-900 uppercase tracking-wider">{tLanding('course4Level')}</p>
-                <p className="text-lg font-bold text-emerald-700">{tLanding('pricePerHour')}</p>
-              </div>
-              <Link href="/free-trial" className="block w-full py-2.5 px-4 bg-emerald-50 text-emerald-900 text-center font-medium rounded-xl group-hover:bg-emerald-900 group-hover:text-white transition-colors">
-                {tLanding('bookNow')}
-              </Link>
+               <div className="w-12 h-12 bg-gold-100 text-gold-700 rounded-2xl flex items-center justify-center mb-6">
+                 <Star className="w-6 h-6" />
+               </div>
+               <h3 className="text-xl font-bold text-emerald-950 mb-2">{tLanding('course4Title')}</h3>
+               <p className="text-sm text-emerald-900/70 mb-6">{tLanding('course4Desc')}</p>
+               <div className="space-y-2 mb-8">
+                 <p className="text-xs font-semibold text-emerald-900 uppercase tracking-wider">{tLanding('course4Level')}</p>
+                 <p className="text-lg font-bold text-emerald-700">{tLanding('pricePerHour')}</p>
+               </div>
+               <Link href="/free-trial" className="block w-full py-2.5 px-4 bg-emerald-50 text-emerald-900 text-center font-medium rounded-xl group-hover:bg-emerald-900 group-hover:text-white transition-colors">
+                 {tLanding('bookNow')}
+               </Link>
             </div>
           </div>
         </div>
