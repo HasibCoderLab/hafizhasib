@@ -122,7 +122,7 @@ export default function CurriculumSection() {
                                 animate={{ x: ["-100%", "200%"] }}
                                 transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1 }}
                             />
-                            Stage {current.id}: {current.title} — {current.subtitle}
+                            Stage {current.id}: {t(current.title as any)} — {t(current.subtitle as any)}
                             <span
                                 className="ml-3 text-xs px-2 py-0.5 rounded-full font-black"
                                 style={{ backgroundColor: "rgba(255,255,255,0.25)" }}
@@ -173,7 +173,7 @@ export default function CurriculumSection() {
                                             className="w-2 h-2 rounded-full shrink-0"
                                             style={{ backgroundColor: current.accent }}
                                         />
-                                        {topic}
+                                        {t(topic as any)}
                                     </motion.div>
                                 ))}
                             </div>
@@ -283,7 +283,7 @@ export default function CurriculumSection() {
                                                     <span style={{ color: current.accent }}>◆</span>
                                                 )}
                                             </span>
-                                            {outcome}
+                                            {t(outcome as any)}
                                         </motion.li>
                                     );
                                 })}
@@ -327,7 +327,7 @@ export default function CurriculumSection() {
                                         key={i}
                                         className="text-xs px-3 py-1.5 rounded-xl font-semibold border border-gray-200 bg-gray-50 text-gray-700"
                                     >
-                                        {topic}
+                                        {t(topic as any)}
                                     </span>
                                 ))}
                             </div>
@@ -348,7 +348,7 @@ export default function CurriculumSection() {
                                                 }`}
                                         >
                                             <span>{isLast ? "✅" : "◆"}</span>
-                                            {outcome}
+                                            {t(outcome as any)}
                                         </li>
                                     );
                                 })}
